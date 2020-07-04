@@ -1,1 +1,68 @@
 <p>add-person works!</p>
+<div>
+<form [formGroup]="bioSection" (ngSubmit)=" bioSection.reset(); ">
+
+  <label>
+    Contact :
+    <input type="text" formControlName="personContact">
+  </label><br>
+  <label>
+    First Name :
+    <input type="text" formControlName="personFirstName">
+  </label><br>
+    <label>
+    Last Name : 
+    <input type="text" formControlName="personLastName">
+  </label><br>  
+  <label>
+    City :
+    <input type="text" formControlName="personCity">
+  </label><br>  
+  <label>
+    State :
+    <input type="text" formControlName="personState">
+  </label><br>  
+  <label>
+    Email :
+    <input type="text" formControlName="personEmail">
+  </label><br>
+  <label>
+    Gender :
+    <input type="text" formControlName="Gender">
+  </label><br>
+    <label>
+    personInfectedDate :
+    <input type="text" formControlName="personInfectedDate">
+  </label><br>  <label>
+    Age :
+    <input type="text" formControlName="personAge">
+  </label><br>  <label>
+    FamilyMembers :
+    <input type="text" formControlName="personFamilyMembers">
+  </label><br>  <label>
+    Recovered :
+    <input type="text" formControlName="personRecovered">
+  </label><br>  <label>
+    Dead :
+    <input type="text" formControlName="personDead">
+  </label><br>  <label>
+    TravelledAbroad :
+    <input type="text" formControlName="personTravelledAbroad">
+  </label><br>  <label>
+    TravelledInCountry :
+    <input type="text" formControlName="personTravelledInCountry">
+  </label><br>
+  <label>
+    Travelled Abroad Name :
+    <input type="text" formControlName="personTravelledAbroadName">
+  </label><br>
+  <label>
+    Travelled Country Name :
+    <input type="text" formControlName="personTravelledInCountryName">
+  </label><br>
+  
+  <button type="submit">Submit Application</button>
+</form>
+
+
+</div>
