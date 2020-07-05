@@ -18,7 +18,7 @@ export class HelpService {
 
   constructor(http:HttpClient) {
     this.http = http;
-    this.HelpersUrl = 'http://localhost:8989/';
+    this.HelpersUrl = 'http://localhost:8080/api/';
   }
 
   public findAll(city:String): Observable<Helper[]> {

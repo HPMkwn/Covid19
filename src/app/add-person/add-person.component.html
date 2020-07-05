@@ -45,16 +45,16 @@
     </div>
   </label><br>
   <label>
+      <div>
     Gender :
-    <input type="text" formControlName="Gender">
-        <div *ngIf="personSection.controls.personGender.touched && !personSection.controls.personGender.valid">
-    Name should be required properly.
+      <input type="radio" formControlName="personGender" value="male" checked> male
+      <input type="radio" formControlName="personGender" value="female" > female
     </div>
-  </label><br>
+  </label>
     <label>
     personInfectedDate :
-    <input type="text" formControlName="personInfectedDate">
-        <div *ngIf="personSection.controls.personInfectedDate.touched && !personSection.controls.personInfectedDate.valid">
+    <input type="text" formControlName="personInfectionDate">
+        <div *ngIf="personSection.controls.personInfectionDate.touched && !personSection.controls.personInfectionDate.valid">
     Name should be required properly.
     </div>
   </label><br>  <label>
@@ -70,41 +70,41 @@
     Name should be required properly.
     </div>
   </label><br>  <label>
+      <div>
     Recovered :
-    <input type="text" formControlName="personRecovered">
-        <div *ngIf="personSection.controls.personRecovered.touched && !personSection.controls.personRecovered.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  <label>
+      <input type="radio" formControlName="personRecovered" value="yes" > Yes
+      <input type="radio" formControlName="personRecovered" value="no" checked> No
+    </div> 
+  </label><label>
+    <div>
     Dead :
-    <input type="text" formControlName="personDead">
-        <div *ngIf="personSection.controls.personDead.touched && !personSection.controls.personDead.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  <label>
+      <input type="radio" formControlName="personDead" value="yes" > Yes
+      <input type="radio" formControlName="personDead" value="no" checked> No
+    </div> 
+  </label> <label>
+      <div>
     TravelledAbroad :
-    <input type="text" formControlName="personTravelledAbroad">
-        <div *ngIf="personSection.controls.personTravelledAbroad.touched && !personSection.controls.personTravelledAbroad.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  <label>
+      <input type="radio" formControlName="personTravelledAbroad" value="yes" > Yes
+      <input type="radio" formControlName="personTravelledAbroad" value="no" checked> No
+    </div> 
+  </label><label>
+    <div>
     TravelledInCountry :
-    <input type="text" formControlName="personTravelledInCountry">
-        <div *ngIf="personSection.controls.personTravelledInCountry.touched && !personSection.controls.personTravelledInCountry.valid">
-    Name should be required properly.
-    </div>
-  </label><br>
+      <input type="radio" formControlName="personTravelledInCountry" value="yes" > Yes
+      <input type="radio" formControlName="personTravelledInCountry" value="no" checked> No
+    </div> 
+  </label>
   <label>
     Travelled Abroad Name :
-    <input type="text" formControlName="personTravelledAbroadName">
-        <div *ngIf="personSection.controls.personTravelledAbroadName.touched && !personSection.controls.personTravelledAbroadName.valid">
+    <input type="text" formControlName="personTravelledAbroadCityName">
+        <div *ngIf="personSection.controls.personTravelledAbroadCityName.touched && !personSection.controls.personTravelledAbroadCityName.valid">
     Name should be required properly.
     </div>
   </label><br>
   <label>
     Travelled Country Name :
-    <input type="text" formControlName="personTravelledInCountryName">
-        <div *ngIf="personSection.controls.personTravelledCountryName.touched && !personSection.controls.personTravelledCountryName.valid">
+    <input type="text" formControlName="personTravelledInCountryCityName">
+        <div *ngIf="personSection.controls.personTravelledInCountryCityName.touched && !personSection.controls.personTravelledInCountryCityName.valid">
     Name should be required properly.
     </div>
   </label><br>

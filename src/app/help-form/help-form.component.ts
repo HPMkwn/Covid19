@@ -27,7 +27,7 @@ export class HelpFormComponent {
       helperState: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(20)]),
       helperEmail: new FormControl('',[Validators.email]),
       helperAddress: new FormControl('',[Validators.required,Validators.maxLength(200)]),
-      Description: new FormControl('',[Validators.required,Validators.maxLength(200)]),
+      helperDescription: new FormControl('',[Validators.required,Validators.maxLength(200)])
     });
 
      onSubmit(){

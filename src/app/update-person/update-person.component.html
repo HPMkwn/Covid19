@@ -1,13 +1,27 @@
 
 <div>
 
-<input [(ngModel)]='contact'>
-
-<div>
-is Dead : 
-<input type="radio" [value]="true" name="dead" [ngModel]="dead"> Yes
-<input type="radio" [value]="false" name="dead" [ngModel]="dead"> No
-
-</div>
-<button (click)="onShow()" >Find Help</button>
+<form [formGroup]="personSection" (ngSubmit)="onSubmit();">
+<label>
+    Contact :
+    <input type="text" formControlName="personContact">
+        <div *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">
+    Name should be required properly.
+    </div>
+  </label>
+<label>
+      <div>
+    Recovered :
+      <input type="radio" formControlName="personRecovered" value="yes" > Yes
+      <input type="radio" formControlName="personRecovered" value="no" checked> No
+    </div> 
+  </label>
+  <label><div>
+    Dead :
+      <input type="radio" formControlName="personDead" value="yes" > Yes
+      <input type="radio" formControlName="personDead" value="no" checked> No
+    </div> 
+  </label>
+<button type="submit" [disabled] = 'personSection.invalid' >Find Help</button>
+</form>
 </div>

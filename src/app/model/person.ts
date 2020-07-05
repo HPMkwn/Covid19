@@ -6,13 +6,13 @@ export class Person {
     personCity: string;
     personState: string;
     personEmail: string;
-    personInfectiionDate: Date;
+    personInfectionDate: String;
     personAge: Number;
     personFamilyMembers: Number;
     personRecovered: boolean;
     personDead: boolean;
     personTravelledAbroad: boolean;
     personTravelledInCountry: boolean;
-    personTravelledAbroadName: string;
-    personTravelledInCountryName: String;
+    personTravelledAbroadCityName: string;
+    personTravelledInCountryCityName: String;
 }

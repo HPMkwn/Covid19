@@ -11,9 +11,24 @@ import { AddPersonComponent } from './add-person/add-person.component';
 import { UpdatePersonComponent } from './update-person/update-person.component';
 import {ReportComponent} from './report/report.component';
 import { HelpDeleteComponent } from './help-delete/help-delete.component';
+import { MapComponent } from './map/map.component';
+import { StateReportComponent } from './state-report/state-report.component';
+import { CityReportComponent } from './city-report/city-report.component';
 
 
 const routes: Routes = [
+  {
+    path: 'map',
+    component: MapComponent,
+  },
+  {
+    path: 'state-report',
+    component: StateReportComponent,
+  },
+  {
+    path: 'city-report',
+  component: CityReportComponent,
+  },
   {
     path: 'report',
     component: ReportComponent,

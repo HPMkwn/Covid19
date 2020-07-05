@@ -13,34 +13,57 @@ import { Person } from '../model/person';
 })
 export class AddPersonComponent implements OnInit {
 
-
+  person : Person;
   constructor(private formBuilder:FormBuilder,
     private  personService:PersonService,
     private router:Router,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute) {this.person = new Person(); }
 
       personSection = new FormGroup({
       personContact: new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
-      personFirstName: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(25)]),
-      personLastName: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(25)]),
+      personFirstName: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(25)]),
+      personLastName: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(25)]),
       personCity: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(20)]),
       personState: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(20)]),
       personEmail: new FormControl('',[Validators.required,Validators.email]),
-      personGender: new FormControl('',[Validators.required]),
+      personGender: new FormControl(''),
       personInfectionDate: new FormControl('',[Validators.required]),
-      personAge: new FormControl('',[Validators.required]),
-      personFamilyMembers: new FormControl('',[Validators.required]),
-      personRecovered: new FormControl('',[Validators.required]),
-      personDead: new FormControl('',[Validators.required]),
-      personTravelledAbroad: new FormControl('',[]),
-      personTravelledInCountry: new FormControl('',[]),
-      personTravelledAbroadName: new FormControl('',[]),
-      personTravelledInCountryName: new FormControl('',[]),
+      personAge: new FormControl(25,[Validators.required]),
+      personFamilyMembers: new FormControl(5,[Validators.required]),
+      personRecovered: new FormControl('no'),
+      personDead: new FormControl('no'),
+      personTravelledAbroad: new FormControl('no',[]),
+      personTravelledInCountry: new FormControl('no',[]),
+      personTravelledAbroadCityName: new FormControl('',[]),
+      personTravelledInCountryCityName: new FormControl('',[]),
     });
 
+
+
+
     onSubmit(){
-      console.log(this.personSection.getRawValue());
-      this.personService.save(this.personSection.getRawValue()).subscribe(_result => this.gotoUserList());
+
+      const demo = this.personSection.getRawValue();
+      this.person.personAge = demo.personAge;
+      this.person.personCity = demo.personCity;
+      this.person.personContact = demo.personContact;
+      this.person.personDead = demo.personDead=="yes" ? true : false;
+      this.person.personEmail = demo.personEmail;
+      this.person.personFamilyMembers = demo.personFamilyMembers;
+      this.person.personFirstName = demo.personFirstName;
+      this.person.personGender = demo.personGender=="male" ? "Male" : "Female";
+      this.person.personInfectionDate = demo.personInfectionDate;
+      this.person.personLastName = demo.personLastName;
+      this.person.personRecovered = demo.personRecovered=="yes" ? true : false;
+      this.person.personState = demo.personState;
+      this.person.personTravelledAbroad = demo.personTravelledAbroad=="yes" ? true : false;
+      this.person.personTravelledAbroadCityName = demo.personTravelledAbroadCityName;
+      this.person.personTravelledInCountry = demo.personTravelledInCountryCityName=="yes"? true:false;
+      this.person.personTravelledInCountryCityName = demo.personTravelledInCountryCityName;
+
+      console.log(this.person);
+      
+      this.personService.save(this.person).subscribe(_result => this.gotoUserList());
     }
   
     gotoUserList() {

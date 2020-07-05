@@ -13,20 +13,31 @@ export class PersonService {
 
   constructor(http:HttpClient) {
     this.http = http;
-    this.HelpersUrl = 'http://localhost:8989/api/';
+    this.HelpersUrl = 'http://localhost:8080/api/';
   }
 
+
+  //Find Data From Person Service  
   public findAll(): Observable<Person[]> {
     return this.http.get<Person[]>(this.HelpersUrl + 'person');
   }
   public findById(contact:String): Observable<Person> {
     return this.http.get<Person>(this.HelpersUrl + 'person/' +  contact);
   }
- 
-  public save(Person: Person) {
-    return this.http.post<Person>(this.HelpersUrl + 'person', Person);
-}
-public update(contact:String ,dead : Boolean , recovered : Boolean) {
-  return this.http.post<Person>(this.HelpersUrl + 'person/' + contact, {contact,dead,recovered});
+  public findAllCity(city : String): Observable<Person[]> {
+    return this.http.get<Person[]>(this.HelpersUrl + 'report/city/'+ city);
+  }
+  public findAllState(state :String): Observable<Person[]> {
+    return this.http.get<Person[]>(this.HelpersUrl + 'report/city/' + state);
+  }
+  
+  //Add Person to Table
+  public save(person: Person) {
+    return this.http.post<Person>(this.HelpersUrl + 'person', person);
+  }
+
+  //Update Person
+  public update(person:Person) {
+  return this.http.post<Person>(this.HelpersUrl + 'personupdate/',person);
 }
 }

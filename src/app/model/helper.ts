@@ -5,6 +5,6 @@ export class Helper {
     helperState: string;
     helperEmail: string;
     helperAddress: string;
-    Description: string;
+    helperDescription: string;
 }
 
