@@ -1,7 +1,9 @@
 <div>
-
-<input [(ngModel)]='city'>
-<button (click)="onShow()" >Find Help</button>
+  <div class="form-group w-25">
+    <label for="personCity">city</label>
+    <input type="text" class="form-control"   [(ngModel)]='city'>
+  </div>
+  <button class="btn btn-primary" (click)="onShow()" >Find Help</button>
 </div>
 
 

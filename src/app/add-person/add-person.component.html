@@ -1,116 +1,85 @@
-<p>add-person works!</p>
-<div>
-<form [formGroup]="personSection" (ngSubmit)="onSubmit();">
-
-  <label>
-    Contact :
-    <input type="text" formControlName="personContact">
-        <div *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">
-    Name should be required properly.
-    </div>
-  </label><br>
-  <label>
-    First Name :
-    <input type="text" formControlName="personFirstName">
-        <div *ngIf="personSection.controls.personFirstName.touched && !personSection.controls.personFirstName.valid">
-    Name should be required properly.
-    </div>
-  </label><br>
-    <label>
-    Last Name : 
-    <input type="text" formControlName="personLastName">
-        <div *ngIf="personSection.controls.personLastName.touched && !personSection.controls.personLastName.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  
-  <label>
-    City :
-    <input type="text" formControlName="personCity">
-        <div *ngIf="personSection.controls.personCity.touched && !personSection.controls.personCity.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  
-  <label>
-    State :
-    <input type="text" formControlName="personState">
-        <div *ngIf="personSection.controls.personState.touched && !personSection.controls.personState.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  
-  <label>
-    Email :
-    <input type="text" formControlName="personEmail">
-        <div *ngIf="personSection.controls.personEmail.touched && !personSection.controls.personEmail.valid">
-    Name should be required properly.
-    </div>
-  </label><br>
-  <label>
-      <div>
-    Gender :
-      <input type="radio" formControlName="personGender" value="male" checked> male
-      <input type="radio" formControlName="personGender" value="female" > female
-    </div>
-  </label>
-    <label>
-    personInfectedDate :
-    <input type="text" formControlName="personInfectionDate">
-        <div *ngIf="personSection.controls.personInfectionDate.touched && !personSection.controls.personInfectionDate.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  <label>
-    Age :
-    <input type="text" formControlName="personAge">
-        <div *ngIf="personSection.controls.personAge.touched && !personSection.controls.personAge.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  <label>
-    FamilyMembers :
-    <input type="text" formControlName="personFamilyMembers">
-        <div *ngIf="personSection.controls.personFamilyMembers.touched && !personSection.controls.personFamilyMembers.valid">
-    Name should be required properly.
-    </div>
-  </label><br>  <label>
-      <div>
-    Recovered :
+<nav class="justify-content-center">
+<form [formGroup]="personSection " (ngSubmit)="onSubmit();">
+  <div class="form-group w-25">
+    <label for="personContact">Contact</label>
+    <input type="text" class="form-control" id="personContact" aria-describedby="Contact Help" placeholder="Enter Contact Number" formControlName="personContact">
+    <small id="personContact" class="form-text text-danger"  *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">Number shoud be 10 digits..</small>
+  </div>
+  <div class="form-group w-25">
+    <label for="personContact">First Name</label>
+    <input type="text" class="form-control" id="" aria-describedby="" formControlName="personContact">
+    <small id="personContact" class="form-text text-danger" *ngIf="personSection.controls.personFirstName.touched && !personSection.controls.personFirstName.valid">Name is required</small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personLastName">Last Name</label>
+    <input type="text" class="form-control" id="personLastName" aria-describedby="" formControlName="personLastName">
+    <small id="personLastName" class="form-text text-danger" *ngIf="personSection.controls.personLastName.touched && !personSection.controls.personLastName.valid" ></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personCity">City</label>
+    <input type="text" class="form-control" id="personCity" aria-describedby="" formControlName="personCity">
+    <small id="personCity" class="form-text text-danger" *ngIf="personSection.controls.personCity.touched && !personSection.controls.personCity.valid" ></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personState">State</label>
+    <input type="text" class="form-control" id="personState" aria-describedby="" formControlName="personState">
+    <small id="personState" class="form-text text-danger" *ngIf="personSection.controls.personState.touched && !personSection.controls.personState.valid"></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personEmail">Email</label>
+    <input type="text" class="form-control" id="personEmail" aria-describedby="" formControlName="personEmail">
+    <small id="personEmail" class="form-text text-danger" *ngIf="personSection.controls.personEmail.touched && !personSection.controls.personEmail.valid"></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personGender">Gender  :    .</label>
+    <input type="radio" formControlName="personGender" value="male" checked> male
+    <input type="radio" formControlName="personGender" value="female" > female
+  </div>
+    <div class="form-group w-25">
+    <label for="personInfectionDate">Infection Date</label>
+    <input type="text" class="form-control" id="personInfectionDate" aria-describedby="" formControlName="personInfectionDate">
+    <small id="personInfectionDate" class="form-text text-danger" *ngIf="personSection.controls.personInfectionDate.touched && !personSection.controls.personInfectionDate.valid"></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personAge">Age</label>
+    <input type="number" class="form-control" id="personAge" aria-describedby="" formControlName="personAge">
+    <small id="personAge" class="form-text text-danger" *ngIf="personSection.controls.personAge.touched && !personSection.controls.personAge.valid"></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personFamilyMembers">Family Members</label>
+    <input type="number" class="form-control" id="personFamilyMembers" aria-describedby="" formControlName="personFamilyMembers">
+    <small id="personFamilyMembers" class="form-text text-danger" *ngIf="personSection.controls.personFamilyMembers.touched && !personSection.controls.personFamilyMembers.valid"></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personRecovered">Recovered : </label>
       <input type="radio" formControlName="personRecovered" value="yes" > Yes
       <input type="radio" formControlName="personRecovered" value="no" checked> No
-    </div> 
-  </label><label>
-    <div>
-    Dead :
+  </div>
+    <div class="form-group w-25">
+    <label for="personDead">Dead</label>
       <input type="radio" formControlName="personDead" value="yes" > Yes
       <input type="radio" formControlName="personDead" value="no" checked> No
-    </div> 
-  </label> <label>
-      <div>
-    TravelledAbroad :
+  </div>
+    <div class="form-group w-25">
+    <label for="personTravelledAbroad">Travelled Abroad : </label>
       <input type="radio" formControlName="personTravelledAbroad" value="yes" > Yes
       <input type="radio" formControlName="personTravelledAbroad" value="no" checked> No
-    </div> 
-  </label><label>
-    <div>
-    TravelledInCountry :
-      <input type="radio" formControlName="personTravelledInCountry" value="yes" > Yes
+  </div>
+    <div class="form-group w-25">
+    <label for="personTravelledInCountry">Travelled In Country : </label>
+     <input type="radio" formControlName="personTravelledInCountry" value="yes" > Yes
       <input type="radio" formControlName="personTravelledInCountry" value="no" checked> No
-    </div> 
-  </label>
-  <label>
-    Travelled Abroad Name :
-    <input type="text" formControlName="personTravelledAbroadCityName">
-        <div *ngIf="personSection.controls.personTravelledAbroadCityName.touched && !personSection.controls.personTravelledAbroadCityName.valid">
-    Name should be required properly.
-    </div>
-  </label><br>
-  <label>
-    Travelled Country Name :
-    <input type="text" formControlName="personTravelledInCountryCityName">
-        <div *ngIf="personSection.controls.personTravelledInCountryCityName.touched && !personSection.controls.personTravelledInCountryCityName.valid">
-    Name should be required properly.
-    </div>
-  </label><br>
-  
-  <button type="submit" [disabled] = 'personSection.invalid'>Submit Application</button>
+  </div>
+    <div class="form-group w-25">
+    <label for="personTravelledAbroadCityName">Travelled Country Name</label>
+    <input type="text" class="form-control" id="personTravelledAbroadCityName" aria-describedby="" formControlName="personTravelledAbroadCityName">
+    <small id="personTravelledAbroadCityName" class="form-text text-danger"*ngIf="personSection.controls.personTravelledAbroadCityName.touched && !personSection.controls.personTravelledAbroadCityName.valid">></small>
+  </div>
+    <div class="form-group w-25">
+    <label for="personTravelledInCountryCityName">Travelled In Country Name</label>
+    <input type="text" class="form-control" id="personTravelledInCountryCityName" aria-describedby="" formControlName="personTravelledInCountryCityName">
+    <small id="personTravelledInCountryCityName" class="form-text text-danger" ></small>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled] = 'personSection.invalid'>Submit</button>
 </form>
-
-
-</div>
+<nav>

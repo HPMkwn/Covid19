@@ -1,5 +1,7 @@
 <div>
-
-<input [(ngModel)]='contact'>
-<button (click)="onShow()" >Find Help</button>
+  <div class="form-group w-25">
+    <label for="personContact">Contact</label>
+    <input type="text" class="form-control"   [(ngModel)]='contact'>
+  </div>
+  <button class="btn btn-primary" (click)="onShow()" >Delete Help</button>
 </div>

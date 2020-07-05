@@ -1,27 +1,18 @@
-
-<div>
-
-<form [formGroup]="personSection" (ngSubmit)="onSubmit();">
-<label>
-    Contact :
-    <input type="text" formControlName="personContact">
-        <div *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">
-    Name should be required properly.
-    </div>
-  </label>
-<label>
-      <div>
-    Recovered :
+<form [formGroup]="personSection " (ngSubmit)="onSubmit();">
+  <div class="form-group w-25">
+    <label for="personContact">Contact</label>
+    <input type="text" class="form-control" id="personContact" aria-describedby="Contact Help" placeholder="Enter Contact Number" formControlName="personContact">
+    <small id="personContact" class="form-text text-danger"  *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">Number shoud be 10 digits..</small>
+  </div>
+   <div class="form-group w-25">
+    <label for="personRecovered">Recovered : </label>
       <input type="radio" formControlName="personRecovered" value="yes" > Yes
       <input type="radio" formControlName="personRecovered" value="no" checked> No
-    </div> 
-  </label>
-  <label><div>
-    Dead :
+  </div>
+    <div class="form-group w-25">
+    <label for="personDead">Dead</label>
       <input type="radio" formControlName="personDead" value="yes" > Yes
       <input type="radio" formControlName="personDead" value="no" checked> No
-    </div> 
-  </label>
-<button type="submit" [disabled] = 'personSection.invalid' >Find Help</button>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled] = 'personSection.invalid'>Submit</button>
 </form>
-</div>

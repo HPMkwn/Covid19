@@ -1,10 +1,28 @@
-<h1 class="title">Angular Router</h1>
-<nav>
-  <button routerLink="/person" routerLinkActive="active">person </button>   
-  <button routerLink="/help" routerLinkActive="active">help</button>
-  <button routerLink="/report" routerLinkActive="active">report</button>
+<nav class="navbar navbar-light bg-light bg-info">
+  <a class="navbar-brand text-decoration-none" href="#">
+    <img src="./assets/icon.png" width="30" height="30" alt="">
+    <h1>Covid 19</h1>
+  </a><br>
 </nav>
+<div class="nav">
+<ul class="nav nav-tabs">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/person" routerLinkActive="active">person</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/help" routerLinkActive="active">help</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/report" routerLinkActive="active">report</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link disabled" href="#">Disabled</a>
+  </li>
+</ul>
+</div>
 
-<div>
+<div class="outlet">
   <router-outlet></router-outlet>
 </div>
+
+

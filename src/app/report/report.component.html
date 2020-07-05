@@ -1,7 +1,11 @@
-<p>help works!</p>
-  <button routerLink="/map" routerLinkActive="active">Map</button>   
-  <button routerLink="/state-report" routerLinkActive="active">State Reports</button>
-  <button routerLink="/city-report" routerLinkActive="active">City Reports</button>
-<div>
-  <router-outlet></router-outlet>
-</div>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/map" routerLinkActive="active">Map</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/state-report" routerLinkActive="active">State Reports</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" routerLink="/city-report" routerLinkActive="active">City Reports</a>
+  </li>
+</ul>

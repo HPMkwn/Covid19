@@ -1,7 +1,15 @@
-<p>help works!</p>
-  <button routerLink="/help/help-form" routerLinkActive="active">Help Center </button>   
-  <button routerLink="/help/help-find" routerLinkActive="active">Find Help</button>
-  <button routerLink="/help/help-delete" routerLinkActive="active">Find Delete</button>
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link active" routerLink="/help/help-form" routerLinkActive="active">Add Help Center </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/help/help-find" routerLinkActive="active">Find Help</a>
+  </li>
+    <li class="nav-item">
+    <a class="nav-link" routerLink="/help/help-delete" routerLinkActive="active">Delete Help Center</a>
+  </li>
+</ul>
+
 <div>
   <router-outlet></router-outlet>
 </div>
