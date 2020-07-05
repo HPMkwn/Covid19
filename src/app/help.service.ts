@@ -21,11 +21,14 @@ export class HelpService {
     this.HelpersUrl = 'http://localhost:8989/';
   }
 
-  public findAll(): Observable<Helper[]> {
-    return this.http.get<Helper[]>(this.HelpersUrl + 'helpers');
+  public findAll(city:String): Observable<Helper[]> {
+    return this.http.get<Helper[]>(this.HelpersUrl + 'help/' + city);
   }
  
-  public save(Helper: Helper) {
-    return this.http.post<Helper>(this.HelpersUrl + 'helpers', Helper);
+  public save(helper: Helper) {
+    return this.http.post<Helper>(this.HelpersUrl + 'help', helper);
+}
+public delete(contact: String) {
+  return this.http.delete<Helper>(this.HelpersUrl + 'help/' + contact);
 }
 }

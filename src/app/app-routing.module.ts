@@ -10,7 +10,7 @@ import { SelectivePreloadingStrategyService } from './selective-preloading-strat
 import { AddPersonComponent } from './add-person/add-person.component';
 import { UpdatePersonComponent } from './update-person/update-person.component';
 import {ReportComponent} from './report/report.component';
-
+import { HelpDeleteComponent } from './help-delete/help-delete.component';
 
 
 const routes: Routes = [
@@ -46,6 +46,12 @@ const routes: Routes = [
     // loadChildren: () => import('./help/help.component').then(m => m.AdminModule),
     component: HelpFormComponent,
   },
+  {
+    path: 'help/help-delete',
+    // loadChildren: () => import('./help/help.component').then(m => m.AdminModule),
+    component: HelpDeleteComponent,
+  },
+  
   // {
   //   path: 'crisis-center',
   //   loadChildren: () => import('./crisis-center/crisis-center.module').then(m => m.CrisisCenterModule),

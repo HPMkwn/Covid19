@@ -1,16 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { HelpService } from '../help.service';
 import { Helper } from '../model/helper';
-
 @Component({
-  selector: 'app-help-find',
-  templateUrl: './help-find.component.html',
-  styleUrls: ['./help-find.component.css']
+  selector: 'app-help-delete',
+  templateUrl: './help-delete.component.html',
+  styleUrls: ['./help-delete.component.css']
 })
-export class HelpFindComponent implements OnInit {
+export class HelpDeleteComponent implements OnInit {
 
-  helpers : Helper[];
-  city: String;
+  contact: String;
   show : Boolean;
   constructor(private helpService : HelpService) {
     this.show = false;
@@ -18,9 +16,9 @@ export class HelpFindComponent implements OnInit {
    
   onShow(){
     this.show = true;
-    console.log(this.city);
-    this.helpService.findAll(this.city).subscribe(data => {
-      this.helpers = data.filter(value=> value.helperCity==this.city);
+    console.log(this.contact);
+    this.helpService.findAll(this.contact).subscribe(data => {
+
       console.log(data);  
     });
     

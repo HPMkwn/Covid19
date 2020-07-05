@@ -15,6 +15,7 @@ import { UpdatePersonComponent } from './update-person/update-person.component';
 import { ReportComponent } from './report/report.component';
 import { HelpService } from './help.service';
 import { PersonService } from './person.service';
+import { HelpDeleteComponent } from './help-delete/help-delete.component';
 
 
 @NgModule({
@@ -24,10 +25,12 @@ import { PersonService } from './person.service';
     PageNotFoundComponent,
     HelpFindComponent,
     HelpFormComponent,
+    HelpDeleteComponent,
     HelpComponent,
     AddPersonComponent,
     UpdatePersonComponent,
     ReportComponent,
+    HelpDeleteComponent,
   ],
   imports: [
     BrowserModule,

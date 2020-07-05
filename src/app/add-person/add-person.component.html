@@ -1,67 +1,115 @@
 <p>add-person works!</p>
 <div>
-<form [formGroup]="bioSection" (ngSubmit)=" bioSection.reset(); ">
+<form [formGroup]="personSection" (ngSubmit)="onSubmit();">
 
   <label>
     Contact :
     <input type="text" formControlName="personContact">
+        <div *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   <label>
     First Name :
     <input type="text" formControlName="personFirstName">
+        <div *ngIf="personSection.controls.personFirstName.touched && !personSection.controls.personFirstName.valid">
+    Name should be required properly.
+    </div>
   </label><br>
     <label>
     Last Name : 
     <input type="text" formControlName="personLastName">
+        <div *ngIf="personSection.controls.personLastName.touched && !personSection.controls.personLastName.valid">
+    Name should be required properly.
+    </div>
   </label><br>  
   <label>
     City :
     <input type="text" formControlName="personCity">
+        <div *ngIf="personSection.controls.personCity.touched && !personSection.controls.personCity.valid">
+    Name should be required properly.
+    </div>
   </label><br>  
   <label>
     State :
     <input type="text" formControlName="personState">
+        <div *ngIf="personSection.controls.personState.touched && !personSection.controls.personState.valid">
+    Name should be required properly.
+    </div>
   </label><br>  
   <label>
     Email :
     <input type="text" formControlName="personEmail">
+        <div *ngIf="personSection.controls.personEmail.touched && !personSection.controls.personEmail.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   <label>
     Gender :
     <input type="text" formControlName="Gender">
+        <div *ngIf="personSection.controls.personGender.touched && !personSection.controls.personGender.valid">
+    Name should be required properly.
+    </div>
   </label><br>
     <label>
     personInfectedDate :
     <input type="text" formControlName="personInfectedDate">
+        <div *ngIf="personSection.controls.personInfectedDate.touched && !personSection.controls.personInfectedDate.valid">
+    Name should be required properly.
+    </div>
   </label><br>  <label>
     Age :
     <input type="text" formControlName="personAge">
+        <div *ngIf="personSection.controls.personAge.touched && !personSection.controls.personAge.valid">
+    Name should be required properly.
+    </div>
   </label><br>  <label>
     FamilyMembers :
     <input type="text" formControlName="personFamilyMembers">
+        <div *ngIf="personSection.controls.personFamilyMembers.touched && !personSection.controls.personFamilyMembers.valid">
+    Name should be required properly.
+    </div>
   </label><br>  <label>
     Recovered :
     <input type="text" formControlName="personRecovered">
+        <div *ngIf="personSection.controls.personRecovered.touched && !personSection.controls.personRecovered.valid">
+    Name should be required properly.
+    </div>
   </label><br>  <label>
     Dead :
     <input type="text" formControlName="personDead">
+        <div *ngIf="personSection.controls.personDead.touched && !personSection.controls.personDead.valid">
+    Name should be required properly.
+    </div>
   </label><br>  <label>
     TravelledAbroad :
     <input type="text" formControlName="personTravelledAbroad">
+        <div *ngIf="personSection.controls.personTravelledAbroad.touched && !personSection.controls.personTravelledAbroad.valid">
+    Name should be required properly.
+    </div>
   </label><br>  <label>
     TravelledInCountry :
     <input type="text" formControlName="personTravelledInCountry">
+        <div *ngIf="personSection.controls.personTravelledInCountry.touched && !personSection.controls.personTravelledInCountry.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   <label>
     Travelled Abroad Name :
     <input type="text" formControlName="personTravelledAbroadName">
+        <div *ngIf="personSection.controls.personTravelledAbroadName.touched && !personSection.controls.personTravelledAbroadName.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   <label>
     Travelled Country Name :
     <input type="text" formControlName="personTravelledInCountryName">
+        <div *ngIf="personSection.controls.personTravelledCountryName.touched && !personSection.controls.personTravelledCountryName.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   
-  <button type="submit">Submit Application</button>
+  <button type="submit" [disabled] = 'personSection.invalid'>Submit Application</button>
 </form>
 
 
