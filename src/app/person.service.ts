@@ -17,11 +17,16 @@ export class PersonService {
   }
 
   public findAll(): Observable<Person[]> {
-    return this.http.get<Person[]>(this.HelpersUrl + '');
+    return this.http.get<Person[]>(this.HelpersUrl + 'person');
+  }
+  public findById(contact:String): Observable<Person> {
+    return this.http.get<Person>(this.HelpersUrl + 'person/' +  contact);
   }
  
   public save(Person: Person) {
-    return this.http.post<Person>(this.HelpersUrl + 'addperson', Person);
+    return this.http.post<Person>(this.HelpersUrl + 'person', Person);
 }
-
+public update(contact:String ,dead : Boolean , recovered : Boolean) {
+  return this.http.post<Person>(this.HelpersUrl + 'person/' + contact, {contact,dead,recovered});
+}
 }

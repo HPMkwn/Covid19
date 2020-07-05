@@ -17,11 +17,7 @@ export class HelpDeleteComponent implements OnInit {
   onShow(){
     this.show = true;
     console.log(this.contact);
-    this.helpService.findAll(this.contact).subscribe(data => {
-
-      console.log(data);  
-    });
-    
+    this.helpService.delete(this.contact);
   }
 
   ngOnInit(): void {
