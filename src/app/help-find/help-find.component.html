@@ -1,1 +1,38 @@
-<p>help-find works!</p>
+<div>
+
+<input [(ngModel)]='city'>
+<button (click)="onShow()" >Find Help</button>
+</div>
+
+
+<div *ngIf="show">
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Contact No.</th><th></th>
+          <th scope="col">Name</th><th></th>
+          <th scope="col">Email</th><th></th>
+          <th scope="col">City</th><th></th>
+          <th scope="col">State</th><th></th>
+          <th scope="col">Address</th><th></th>
+          <th scope="col">Description</th><th></th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let helper of helpers">
+          <td>{{ helper.helperContact }}</td><th></th>
+          <td>{{ helper.helperName }}</td><th></th>
+          <td><a href="mailto:{{ helper.helperEmail }}">{{ helper.helperEmail }}</a></td><th></th>
+          <td>{{ helper.helperCity }}</td><th></th>
+          <td>{{ helper.helperState }}</td><th></th>
+          <td>{{ helper.helperAddress }}</td><th></th>
+          <td>{{ helper.Description }}</td><th></th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</div>

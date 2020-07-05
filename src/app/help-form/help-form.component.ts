@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder,FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HelpService } from '../help.service';
 import { Helper } from '../model/helper';
@@ -10,42 +9,33 @@ import { Helper } from '../model/helper';
   templateUrl: './help-form.component.html',
   styleUrls: ['./help-form.component.css']
 })
-export class HelpFormComponent implements OnInit {
+
+//Bind data from client and use of services from here
+export class HelpFormComponent {
 
 
-
+  helper : Helper;
   constructor(private formBuilder:FormBuilder,
-    private  helpers:HelpService) { 
-      this.helpers = helpers;
-    }
+    private  helpService:HelpService,
+    private router:Router,
+    private route:ActivatedRoute) { }
 
-    bioSection = new FormGroup({
-      helperContact: new FormControl(''),
-      helperName: new FormControl('',[Validators.required,Validators.min(5)]),
-      helperCity: new FormControl(''),
-      helperState: new FormControl(''),
-      helperEmail: new FormControl(''),
-      helperAddress: new FormControl(''),
-      Description: new FormControl(''),
+    helpSection = new FormGroup({
+      helperContact: new FormControl('',[Validators.required,Validators.minLength(10),Validators.maxLength(10)]),
+      helperName: new FormControl('',[Validators.required,Validators.minLength(5),Validators.maxLength(25)]),
+      helperCity: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(20)]),
+      helperState: new FormControl('',[Validators.required,Validators.minLength(1),Validators.maxLength(20)]),
+      helperEmail: new FormControl('',[Validators.email]),
+      helperAddress: new FormControl('',[Validators.required,Validators.maxLength(200)]),
+      Description: new FormControl('',[Validators.required,Validators.maxLength(200)]),
     });
 
-     helper : Helper[];
-    onSubmit(){
-      console.log(this.bioSection.getRawValue());
-      this.helpers.addName(this.bioSection.getRawValue());
-
-      console.log(this.helpers.getName());
+     onSubmit(){
+      console.log(this.helpSection.getRawValue());
+      this.helpService.save(this.helpSection.getRawValue()).subscribe(_result => this.gotoUserList());
     }
-  ngOnInit(): void {
-  }
-
+  
+    gotoUserList() {
+      this.router.navigate(['/help']);
+    }
 }
-
-// readonly HelperUrl = 'https://localhost:8989/Helpers';
-
-// posts : any;
-// constructor(private http : HttpClient){}
-// getposts(){
-//   this.posts = this.http.get(this.HelperUrl)
-//   console.log(this.posts);
-// }

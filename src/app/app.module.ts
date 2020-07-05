@@ -13,7 +13,8 @@ import { HelpFormComponent } from './help-form/help-form.component';
 import { AddPersonComponent } from './add-person/add-person.component';
 import { UpdatePersonComponent } from './update-person/update-person.component';
 import { ReportComponent } from './report/report.component';
-
+import { HelpService } from './help.service';
+import { PersonService } from './person.service';
 
 
 @NgModule({
@@ -30,12 +31,12 @@ import { ReportComponent } from './report/report.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [HelpService,PersonService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

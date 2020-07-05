@@ -1,35 +1,57 @@
 <div>
-<form [formGroup]="bioSection" (ngSubmit)=" bioSection.reset(); ">
+<form [formGroup]="helpSection" (ngSubmit)="onSubmit();">
 
   <label>
+  
     Name :
     <input type="text" formControlName="helperName">
+    <div *ngIf="helpSection.controls.helperName.touched && !helpSection.controls.helperName.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   <label>
     Contact No :
     <input type="text" formControlName="helperContact">
+    <div *ngIf="helpSection.controls.helperContact.touched && !helpSection.controls.helperContact.valid">
+    Contact should be +91 1234567890 format....
+    </div>
   </label><br>
     <label>
     City : 
     <input type="text" formControlName="helperCity">
+    <div *ngIf="helpSection.controls.helperCity.touched && !helpSection.controls.helperCity.valid">
+    Name should be required properly.
+    </div>
   </label><br>  
   <label>
     State :
     <input type="text" formControlName="helperState">
+    <div *ngIf="helpSection.controls.helperState.touched && !helpSection.controls.helperState.valid">
+    Name should be required properly.
+    </div>
   </label><br>  
   <label>
     Email :
     <input type="text" formControlName="helperEmail">
+      <div *ngIf="helpSection.controls.helperEmail.touched && !helpSection.controls.helperEmail.valid">
+    Name should be required properly.
+    </div>
   </label><br>  
   <label>
     Address :
     <input type="text" formControlName="helperAddress">
+      <div *ngIf="helpSection.controls.helperAddress.touched && !helpSection.controls.helperAddress.valid">
+    Name should be required properly.
+    </div>
   </label><br>
   <label>
     Descreption :
     <input type="text" formControlName="Description">
+      <div *ngIf="helpSection.controls.Description.touched && !helpSection.controls.Description.valid">
+    Name should be required properly.
+    </div>
   </label><br>
-  <button type="submit">Submit Application</button>
+  <button type="submit" [disabled] = 'helpSection.invalid'>Submit Application</button>
 </form>
 
 

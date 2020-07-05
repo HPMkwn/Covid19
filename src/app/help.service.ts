@@ -7,29 +7,25 @@ import { Helper } from './model/helper';
   providedIn: 'root'
 })
 
+
+//Define each and every query functionns and retrive from here
+
 export class HelpService {
 
 
   private HelpersUrl: string;
   private http:HttpClient;
 
-  Constructor(http:HttpClient) {
+  constructor(http:HttpClient) {
     this.http = http;
-    this.HelpersUrl = 'http://localhost:8989/Helpers';
+    this.HelpersUrl = 'http://localhost:8989/';
   }
-  names;
-  public addName(value : Helper) {
-    this.names=value;
-    return this.http.post<Helper>(this.HelpersUrl , this.names);
-  }
-  public getName() {
-    return this.names;
-  }
+
   public findAll(): Observable<Helper[]> {
-    return this.http.get<Helper[]>(this.HelpersUrl);
+    return this.http.get<Helper[]>(this.HelpersUrl + 'helpers');
   }
  
   public save(Helper: Helper) {
-    return this.http.post<Helper>(this.HelpersUrl, Helper);
+    return this.http.post<Helper>(this.HelpersUrl + 'helpers', Helper);
 }
 }
