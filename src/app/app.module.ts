@@ -19,6 +19,9 @@ import { HelpDeleteComponent } from './help-delete/help-delete.component';
 import { MapComponent } from './map/map.component';
 import { StateReportComponent } from './state-report/state-report.component';
 import { CityReportComponent } from './city-report/city-report.component';
+import { DataShowComponent } from './data-show/data-show.component';
+import { PieComponent } from './pie/pie.component';
+import { BarComponent } from './bar/bar.component';
 
 
 @NgModule({
@@ -37,6 +40,9 @@ import { CityReportComponent } from './city-report/city-report.component';
     MapComponent,
     StateReportComponent,
     CityReportComponent,
+    DataShowComponent,
+    PieComponent,
+    BarComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,9 +14,23 @@ import { HelpDeleteComponent } from './help-delete/help-delete.component';
 import { MapComponent } from './map/map.component';
 import { StateReportComponent } from './state-report/state-report.component';
 import { CityReportComponent } from './city-report/city-report.component';
-
+import { DataShowComponent } from './data-show/data-show.component';
+import { PieComponent } from './pie/pie.component';
+import { BarComponent } from './bar/bar.component';
 
 const routes: Routes = [
+  {
+    path: 'pie',
+    component: PieComponent,
+  },
+  {
+    path: 'bar',
+    component: BarComponent,
+  },
+  {
+    path: 'data-show',
+    component: DataShowComponent,
+  },
   {
     path: 'map',
     component: MapComponent,
@@ -27,7 +41,7 @@ const routes: Routes = [
   },
   {
     path: 'city-report',
-  component: CityReportComponent,
+    component: CityReportComponent,
   },
   {
     path: 'report',

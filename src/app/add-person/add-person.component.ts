@@ -46,7 +46,7 @@ export class AddPersonComponent implements OnInit {
       const demo = this.personSection.getRawValue();
       this.person.personAge = demo.personAge;
       this.person.personCity = demo.personCity;
-      this.person.personContact = demo.personContact;
+      this.person.personContact = demo.personContact.toString();
       this.person.personDead = demo.personDead=="yes" ? true : false;
       this.person.personEmail = demo.personEmail;
       this.person.personFamilyMembers = demo.personFamilyMembers;

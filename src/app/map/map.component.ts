@@ -7,10 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
+  show : Boolean;
+  city : String
   lat: Number = 21.4932;
   lng : Number = 70.1366;
-  zoom: Number = 5;
-  constructor() { }
+  zoom: Number = 15;
+  constructor() { this.show = false;}
 
   ngOnInit(): void {
   }

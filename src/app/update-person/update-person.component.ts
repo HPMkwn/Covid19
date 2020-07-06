@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Person } from '../model/person';
 import { PersonService } from '../person.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-
+import {UpdatePerson} from '../model/update-person';
 @Component({
   selector: 'app-update-person',
   templateUrl: './update-person.component.html',
@@ -10,13 +10,13 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class UpdatePersonComponent implements OnInit {
 
-  person :Person;
+  updatePerson :UpdatePerson;
   contact: String;
   show : Boolean;
   dead: Boolean;
   recovered :Boolean;
   constructor(private personService : PersonService) {
-    this.person = new Person();
+    this.updatePerson = new UpdatePerson();
    }
    
    personSection = new FormGroup({
@@ -27,11 +27,11 @@ export class UpdatePersonComponent implements OnInit {
 
   onSubmit(){
     const demo = this.personSection.getRawValue();
-    this.person.personContact = demo.personContact;
-    this.person.personRecovered = demo.personRecovered=="yes" ? true : false;
-    this.person.personDead = demo.personDead=="yes" ? true : false;
-    console.log(this.person);
-    this.personService.update(this.person);
+    this.updatePerson.contact = demo.personContact;
+    this.updatePerson.recovered = demo.personRecovered=="yes" ? true : false;
+    this.updatePerson.dead = demo.personDead=="yes" ? true : false;
+    console.log(this.updatePerson);
+    this.personService.update(this.updatePerson).subscribe(result=> console.log(result));
     
   }
 

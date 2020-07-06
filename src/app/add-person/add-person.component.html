@@ -2,13 +2,13 @@
 <form [formGroup]="personSection " (ngSubmit)="onSubmit();">
   <div class="form-group w-25">
     <label for="personContact">Contact</label>
-    <input type="text" class="form-control" id="personContact" aria-describedby="Contact Help" placeholder="Enter Contact Number" formControlName="personContact">
+    <input type="number" class="form-control" id="personContact" aria-describedby="Contact Help" placeholder="Enter Contact Number" formControlName="personContact">
     <small id="personContact" class="form-text text-danger"  *ngIf="personSection.controls.personContact.touched && !personSection.controls.personContact.valid">Number shoud be 10 digits..</small>
   </div>
   <div class="form-group w-25">
-    <label for="personContact">First Name</label>
-    <input type="text" class="form-control" id="" aria-describedby="" formControlName="personContact">
-    <small id="personContact" class="form-text text-danger" *ngIf="personSection.controls.personFirstName.touched && !personSection.controls.personFirstName.valid">Name is required</small>
+    <label for="persopersonFirstNamenContact">First Name</label>
+    <input type="text" class="form-control" id="" aria-describedby="" formControlName="personFirstName">
+    <small id="personFirstName" class="form-text text-danger" *ngIf="personSection.controls.personFirstName.touched && !personSection.controls.personFirstName.valid">Name is required</small>
   </div>
     <div class="form-group w-25">
     <label for="personLastName">Last Name</label>

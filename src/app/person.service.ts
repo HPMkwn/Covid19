@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Person } from './model/person';
+import {UpdatePerson} from './model/update-person';
 
 @Injectable({
   providedIn: 'root'
@@ -28,7 +29,7 @@ export class PersonService {
     return this.http.get<Person[]>(this.HelpersUrl + 'report/city/'+ city);
   }
   public findAllState(state :String): Observable<Person[]> {
-    return this.http.get<Person[]>(this.HelpersUrl + 'report/city/' + state);
+    return this.http.get<Person[]>(this.HelpersUrl + 'report/state/' + state);
   }
   
   //Add Person to Table
@@ -37,7 +38,7 @@ export class PersonService {
   }
 
   //Update Person
-  public update(person:Person) {
-  return this.http.post<Person>(this.HelpersUrl + 'personupdate/',person);
+  public update(updatePerson:UpdatePerson) {
+  return this.http.post<Person>(this.HelpersUrl + 'personupdate/',updatePerson);
 }
 }
